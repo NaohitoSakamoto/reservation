@@ -1,0 +1,857 @@
+@charset "UTF-8";
+
+/*base
+==============================*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: #333;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}
+
+img {
+	vertical-align: bottom;
+}
+
+a:link,
+a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+/*common
+==============================*/
+
+#wrapper {
+	margin: 0 auto;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	width: 100%;
+	max-width: 980px;
+}
+
+#headerInner {
+	display: flex;
+	padding: 10px 0;
+	justify-content: space-between;
+}
+
+#headerInner h1 {
+	padding-left: 10px;
+	color: #0d86d9;
+	font-size: 2.5em;
+}
+
+#headerInnerRight {
+	display: flex;
+	align-items: center;
+	align-self: center;
+}
+
+#headerInnerRight p {
+	padding-right: 10px;
+}
+
+#headerInnerRight a {
+	display: block;
+	font-size: 2em;
+}
+
+#gNavi ul {
+	display: flex;
+}
+
+#gNavi ul li {
+	width: 25%;
+	text-align: center;
+}
+
+#gNavi ul li a:link,
+#gNavi ul li a:visited {
+	display: block;
+	padding: 20px 0;
+	font-size: 1.5em;
+}
+
+footer p {
+	padding: 20px 0;
+	color: #fff;
+	background: #000;
+	text-align: center;
+}
+
+/*general purpose
+==============================*/
+button {
+	position: relative;
+	display: block;
+	border: 1px solid #0d86d9;
+	padding: 10px 20px;
+	/* height: 44px; */
+	color: #fff;
+	background: #0d86d9;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+button:before {
+	position: absolute;
+	display: block;
+	content: '';
+	width: 98%;
+	height: 3px;
+	background: #ccc;
+	bottom: -4px;
+	left: 1%;
+}
+
+button:hover {
+	color: #0d86d9;
+	background: #fff;
+}
+
+/* index.php
+==================================*/
+#home h2 {
+	padding: 10px 0;
+	text-align: center;
+	font-size: 2em;
+}
+
+#home .reservation form {
+	display: flex;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+}
+
+#home .reservation form p {
+	padding-right: 10px;
+}
+
+#home .reservation form input {
+	margin-right: 10px;
+}
+
+#home .reservation form input[type="date"] {
+	padding: 5px;
+}
+
+#home .reservation form .selectForm {
+	position: relative;
+}
+
+#home .reservation form .selectForm::after {
+	position: absolute;
+	top: 7px;
+	right: 18px;
+	font-family: "Font Awesome 5 Free";
+	content: '\f107';
+	font-weight: 900;
+	color: #000;
+	pointer-events: none;
+}
+
+#home .reservation form .selectForm select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin-right: 10px;
+	padding: 5px 50px 5px 20px;
+}
+
+#home .information {
+	text-align: center;
+}
+
+#home .information dl {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#home .information dl dt {
+	padding-right: 30px;
+	padding-bottom: 10px;
+	text-align: right;
+	width: 45%;
+}
+
+#home .information dl dt.last {
+	padding-bottom: 0;
+}
+
+#home .information dl dd {
+	text-align: left;
+	width: 55%;
+}
+
+#home .facility ul {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+}
+
+#home .facility ul li {
+	padding: 0 10px;
+	text-align: center;
+}
+
+#home .facility ul li i {
+	display: block;
+	padding-bottom: 10px;
+	font-size: 5em;
+}
+
+#home .access {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+#home .access h2 {
+	width: 100%;
+}
+
+#home .access img {
+	width: 50%;
+}
+
+#home .access .accessInfo {
+	width: 50%;
+	line-height: 2em;
+	text-align: center;
+}
+
+#home .access .accessInfo > div {
+	display: inline-block;
+	text-align: center;
+}
+
+#home .access .accessInfo > div p,
+#home .access .accessInfo > div h3,
+#home .access .accessInfo > div ul {
+	text-align: left;
+}
+
+#home .access .accessInfo ul {
+	list-style: none;
+}
+
+/* selectRoom.php
+============================================*/
+#selectRoom {
+	text-align: center;
+}
+
+#selectRoom h2 {
+	padding-top: 10px;
+	font-size: 2em;
+}
+
+#selectRoom table {
+	display: inline-block;
+	margin: 10px 0px;
+	border: 1px solid #000;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+#selectRoom table th,
+#selectRoom table td {
+	border: 1px solid #000;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+#selectRoom table th:nth-child(4) {
+	border-right: none;
+}
+
+#selectRoom table th:last-child {
+	border-left: none;
+}
+
+button.reserved {
+	color: #fff;
+	background: #333;
+}
+
+#selectRoom p{
+	margin: 0 auto;
+	padding: 10px 0;
+	width: 60%;
+	text-align: right;
+}
+
+#selectRoom p a:link,
+#selectRoom p a:visited {
+	text-decoration: underline;
+	color: #00f;
+}
+
+/* login.php
+===================================*/
+#login {
+	text-align: center;
+}
+
+#login h2 {
+	padding: 10px 0;
+	font-size: 2em;
+}
+
+#login > p {
+	color: #f00;
+}
+
+#login form {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto 10px;
+	padding-top: 10px;
+	width: 60%;
+}
+
+#login form .textArea,
+#login form .inputArea {
+	margin-bottom: 10px;
+	width: 50%;
+}
+
+#login form .inputArea {
+	padding-left: 10px;
+	text-align: left;
+}
+
+#login form .signUp {
+	padding: 10px;
+	width: 100%;
+	text-align: right;
+}
+
+#login form .signUp a {
+	color: #00f;
+	text-decoration: underline;
+}
+
+#login form .submitArea {
+	width: 100%;
+}
+
+#login form .submitArea button {
+	margin: 0 auto;
+}
+
+/* reservationConfilm.php
+========================================*/
+#reservationConfilm {
+	text-align: center;
+}
+
+#reservationConfilm h2 {
+	padding: 10px 0;
+	font-size: 2em;
+}
+
+#reservationConfilm .confilmTable {
+	display: flex;
+	margin: 0 auto 10px;
+	border: 1px solid #333;
+	flex-wrap: wrap;
+	width: 60%;
+}
+
+#reservationConfilm .confilmTable .title,
+#reservationConfilm .confilmTable .data {
+	border-bottom: 1px solid #333;
+	padding: 10px;
+	width: 50%;
+}
+
+#reservationConfilm .confilmTable .last {
+	border-bottom: none;
+}
+
+#reservationConfilm .confilmTable .title {
+	border-right: 1px solid #333;
+}
+
+#reservationConfilm button {
+	margin: 0 auto 10px;
+}
+
+/* showDB.php
+========================================*/
+#showDB {
+    text-align: center;
+}
+
+#showDB h2 {
+    padding: 10px 0;
+    font-size: 2em;
+}
+
+#showDB h3 {
+    margin: 0 auto;
+    font-size: 1.5em;
+    color: #fff;
+    background: #000;
+    width: 80%;
+}
+
+#showDB .table {
+    margin: 0 auto 10px;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#showDB .table .title,
+#showDB .table .data {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    word-break:break-all;
+}
+
+/* myPage.php
+=====================================*/
+#myPage h2 {
+	padding: 10px 0;
+	text-align: center;
+	font-size: 2em;
+}
+
+#myPage h3 {
+	padding: 10px 0;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#myPage .reservation form {
+	display: flex;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+	padding-bottom: 10px;
+}
+
+#myPage .reservation form p {
+	padding-right: 10px;
+}
+
+#myPage .reservation form input {
+	margin-right: 10px;
+}
+
+#myPage .reservation form input[type="date"] {
+	padding: 5px;
+}
+
+#myPage .reservation form .selectForm {
+	position: relative;
+}
+
+#myPage .reservation form .selectForm::after {
+	position: absolute;
+	top: 7px;
+	right: 18px;
+	font-family: "Font Awesome 5 Free";
+	content: '\f107';
+	font-weight: 900;
+	color: #000;
+	pointer-events: none;
+}
+
+#myPage .reservation form .selectForm select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin-right: 10px;
+	padding: 5px 50px 5px 20px;
+}
+
+#myPage .myReservationList {
+	padding: 10px 0;
+}
+
+#myPage .myReservationList .reservationListItem {
+	margin: 0 auto 20px;
+	border-top: 1px solid #000;
+	width: 60%;
+}
+
+#myPage .myReservationList .reservationListItem form {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+#myPage .myReservationList .reservationListItem form .title,
+#myPage .myReservationList .reservationListItem form .data {
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding: 10px;
+	width: 50%;
+}
+
+#myPage .myReservationList .reservationListItem form .title {
+	border-right: none;
+}
+
+#myPage .myReservationList .reservationListItem form .submit {
+	width: 100%;
+}
+
+#myPage .myReservationList .reservationListItem form .submit button {
+	margin: 10px auto 0;
+}
+
+/* myReservationDeleteConfilm.php
+==================================================*/
+#myReservationDeleteConfilm .reservationList h2 {
+	padding: 10px 0;
+	text-align: center;
+	font-size: 2em;
+}
+
+#myReservationDeleteConfilm .reservationList form {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	border-top: 1px solid #000;
+	width: 60%;
+}
+
+#myReservationDeleteConfilm .reservationList form .title,
+#myReservationDeleteConfilm .reservationList form .data,
+#myReservationDeleteConfilm .reservationList form .delete,
+#myReservationDeleteConfilm .reservationList form .back {
+	text-align: center;
+	padding: 10px;
+	width: 50%;
+}
+
+#myReservationDeleteConfilm .reservationList form .title,
+#myReservationDeleteConfilm .reservationList form .data {
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+#myReservationDeleteConfilm .reservationList form .delete button {
+	margin: 0 10px 0 auto;
+}
+
+#myReservationDeleteConfilm .reservationList form .back button {
+	margin: 0 auto 0 10px;
+}
+
+/* signUp.php
+========================================*/
+#signUp h2 {
+	padding: 10px 0;
+	text-align: center;
+	font-size: 2em;
+}
+
+#signUp form {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: 60%;
+}
+
+#signUp form .textArea,
+#signUp form .inputArea {
+	padding: 5px;
+	width: 50%;
+}
+
+#signUp form .textArea {
+	text-align: left;
+}
+
+#signUp form .inputArea {
+	text-align: center;
+}
+
+#signUp form .submitArea {
+	padding: 10px 0;
+	width: 100%;
+}
+
+#signUp form .submitArea button {
+	margin: 0 auto;
+}
+
+/* signUpConfilm.php
+=========================================*/
+#signUpConfilm h2 {
+	padding: 10px 0;
+	text-align: center;
+	font-size: 2em;
+}
+
+#signUpConfilm .signUpList {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	border-top: 1px solid #000;
+	width: 60%;
+}
+
+#signUpConfilm .signUpList .title,
+#signUpConfilm .signUpList .data,
+#signUpConfilm .signUpList .registration,
+#signUpConfilm .signUpList .back {
+	text-align: center;
+	padding: 10px;
+	width: 50%;
+}
+
+#signUpConfilm .signUpList .title,
+#signUpConfilm .signUpList .data {
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+#signUpConfilm .signUpList .title {
+	border-right: none;
+}
+
+#signUpConfilm .signUpList .registration button {
+	margin: 0 10px 0 auto;
+}
+
+#signUpConfilm .signUpList .back button {
+	margin: 0 auto 0 10px;
+}
+
+/* administrator.php
+==============================*/
+#administrator {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#administrator .operateCalender {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	width: 100%;
+}
+
+#administrator .selectArea {
+	display: flex;
+}
+
+#administrator .selectArea .titleTable {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px 0 10px 10px;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	width: 35%;
+}
+
+#administrator .selectArea .titleTable .numberOfPeopleTitle,
+#administrator .selectArea .titleTable .roomGradeTitle,
+#administrator .selectArea .titleTable .roomNumberTitle {
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding: 5px;
+	width: calc(100%/3);
+	text-align: center;
+}
+
+#administrator .selectArea .dataTable {
+	display: flex;
+	/* align-items: flex-start; */
+	align-items: center;
+	margin: 10px 0 10px 10px;
+	width: 65%;
+}
+
+#administrator .selectArea .dataTable .reservationList {
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	display: flex;
+}
+
+#administrator .selectArea .dataTable .reservationList .reservationItems {
+	width: calc(100%/7);
+}
+
+#administrator .selectArea .dataTable .reservationList .reservationItems p {
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding: 5px;
+	text-align: center;
+}
+
+#administrator .selectArea .dataTable .reservationList .reservationItems p a {
+	color: #00f;
+	text-decoration: underline;
+}
+
+#administrator .editArea {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: .6s;
+}
+
+#administrator .editArea.isShow {
+	opacity: 1;
+	visibility: visible;
+}
+
+#administrator .editArea .editAreaInner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	height: 500px;
+	width: 80%;
+	max-width: 600px;
+	padding: 50px;
+	background-color: #fff;
+	z-index: 2;
+}
+
+#administrator .editArea .editAreaInner .loadHTML {
+	display: flex;
+	align-items: center;
+	z-index: 3;
+	height: 400px;
+}
+
+#administrator .editArea .editAreaInner .closeBtn {
+	position: absolute;
+	right: 0;
+	top: 10px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#administrator .editArea .editAreaInner .closeBtn i {
+	font-size: 20px;
+	color: #333;
+}
+
+#administrator .editArea .background {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.8);
+	z-index: 1;
+	cursor: pointer;
+}
+
+/* administratorEdit.php
+==============================*/
+
+#administratorEdit .administratorTable {
+	display: flex;
+	flex-wrap: wrap;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	margin: 0 auto 10px auto;
+	width: 90%;
+}
+
+#administratorEdit .administratorTable div {
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+#administratorEdit .administratorTable div.title {
+	display: flex;
+	align-items: center;
+	width: 40%;
+}
+
+#administratorEdit .administratorTable div.answer {
+	width: 60%;
+}
+
+#administratorEdit .administratorTable div p {
+	padding: 10px;
+}
+
+#administratorEdit .administratorTable div p.error {
+	color: #f00;
+	display: none;
+}
+
+#administratorEdit button {
+	margin: 0 auto;
+}
+
+/*tablet layout
+==============================*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+/*mobile layout
+==============================*/
+@media screen and (max-width: 479px) {
+/* selectRoom.php
+============================================*/
+	#selectRoom table {
+		display: table;
+		margin: 10px auto;
+		width: 80%;
+	}
+
+	#selectRoom table tr {
+		width: 100%;
+	}
+
+	#selectRoom table tr:first-child {
+		display: none;
+	}
+
+	#selectRoom table tr td {
+		display: block;
+		width: 100%;
+		text-align: right;
+	}
+
+	#selectRoom table tr td:first-child {
+		text-align: center;
+		color: #fff;
+		background: #000;
+	}
+
+	#selectRoom table tr td button {
+		margin: 0 auto;
+	}
+
+	#selectRoom table tr td::before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+	}
+}
